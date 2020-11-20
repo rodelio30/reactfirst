@@ -2,16 +2,16 @@ import React from 'react'
 import { Link } from "react-router-dom"
 
 function NavigationMenu(props){
-    return(
+    return (
         <div>
-               <span>
-                    The Menu
-                </span>
-                <ul>
+            <div className="font-bold py-3">
+                Miki Bagoooo
+            </div>
+            <ul>
                 <li>
                     <Link 
                         to="/" 
-                        className="text-blue-500"
+                        className="text-blue-500 py-3 border-t border-b block"
                         onClick={props.closeMenu}
                     >
                         Home
@@ -20,13 +20,13 @@ function NavigationMenu(props){
                 <li>
                     <Link 
                         to="/about" 
-                        className="text-blue-500"
+                        className="text-blue-500 py-3 border-b block"
                         onClick={props.closeMenu}
                     >
                         About
                     </Link>
                 </li>
-                </ul>
+            </ul>
         </div>
     )
 }

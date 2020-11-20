@@ -1,39 +1,41 @@
 import React from 'react';
-import HelloWorld from './Components/HelloWorld'
-import Header from './Components/Header'
-import Footer from './Components/Footer'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
-} from "react-router-dom";
+  Route
+} from "react-router-dom"
+import Header from './Components/Header'
+import Footer from './Components/Footer'
+import Home from './Views/Home'
+import About from './Views/About'
+import Product from './Views/Product'
 
 function App() {
   return (
-    <div>
+    <div className="relative pb-10 min-h-screen">
       <Router>
-      
-      <Header />
-
-      <HelloWorld name="Master Rodelio"/>
         
-        <switch>
+        <Header />
+
+        <div className="p-3">
+        <Switch>
           <Route exact path="/">
-            <h1 className="font-bold text-2xl">This is home page</h1>
-            </Route>
-          <Route path="/about">
-            <h1 className="font-bold text-2xl">About us</h1>
+            <Home />
           </Route>
-        </switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/products/:id">
+            <Product />
+          </Route>
+        </Switch>
+        </div>
 
         <Footer />
-      
+
       </Router>
-      
     </div>
   );
 }
 
 export default App;
- 
